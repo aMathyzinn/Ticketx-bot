@@ -1,0 +1,44 @@
+# Dependencies and generated builds
+node_modules/
+dist/
+dist-*/
+coverage/
+*.tsbuildinfo
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Runtime databases, transcripts and logs
+data/
+transcripts/
+logs/
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.log
+
+# Deployment archives and private/local tooling
+*.zip
+*.7z
+*.tar
+*.gz
+squarecloud.app
+.agents/
+.codex/
+.cursor/
+.vscode/
+.idea/
+assets/
+config/
+docs/AUDIT.md
+at
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini

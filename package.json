@@ -1,0 +1,45 @@
+{
+  "name": "ticketsbot",
+  "version": "2.0.0",
+  "description": "Bot de tickets multi-servidor, configurÃ¡vel pelo Discord e baseado em Components V2.",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "node -e \"require('node:fs').rmSync('dist',{recursive:true,force:true})\"",
+    "build": "npm run clean && tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "deploy": "tsx src/scripts/deploy-commands.ts",
+    "deploy:clear-guild": "tsx src/scripts/clear-guild-commands.ts",
+    "lint": "eslint src tests --max-warnings=0",
+    "test": "tsx --test tests/*.test.ts",
+    "test:watch": "tsx --test --watch tests/*.test.ts",
+    "check": "npm run lint && npm run test && npm run build",
+    "smoke": "tsx src/scripts/smoke.ts",
+    "audit:live": "tsx src/scripts/live-audit.ts",
+    "inventory": "tsx src/scripts/server-inventory.ts"
+  },
+  "keywords": [
+    "discord",
+    "ticket-bot",
+    "components-v2",
+    "typescript"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "12.2.0",
+    "discord.js": "14.27.0",
+    "dotenv": "17.4.2",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "7.6.13",
+    "@types/node": "24.10.1",
+    "eslint": "9.39.1",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.48.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
